@@ -5,7 +5,17 @@
   "projects": {
     "verdant": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "standalone": false
+        },
+        "@schematics/angular:directive": {
+          "standalone": false
+        },
+        "@schematics/angular:pipe": {
+          "standalone": false
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -94,6 +104,6 @@
     }
   },
   "cli": {
-    "analytics": "07e540ae-a50b-4f2b-b494-8e1d1cb75dba"
+    "analytics": "8bde8c48-635f-4300-9797-6ddd2ff3ec1c"
   }
 }
