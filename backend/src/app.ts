@@ -1,6 +1,8 @@
 import express, { Request, Response } from 'express';
 import dotenv from 'dotenv';
 import { Client } from 'pg';
+import cors from "cors";
+
 
 dotenv.config();
 
@@ -9,6 +11,7 @@ const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
+app.use(cors());
 
 const v1 = require("./v1");
 
