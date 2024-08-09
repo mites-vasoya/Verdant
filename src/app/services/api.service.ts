@@ -13,6 +13,7 @@ export class ApiService {
 
   fetchAuthToken(data: any) {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    console.log("Auth Code : ", data);
     return this.http.get(`${this.apiUrl}/v1/stocks/access_token/generate/` + data, { headers });
   }
 }

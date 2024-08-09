@@ -13,11 +13,13 @@ export class upstoxService {
 
     let body: Object = {
       code : auth_code,
-      client_id : process.env["UPSTOX_API_KEY "],
-      client_secret: process.env["UPSTOX_API_SECRET "],
+      client_id : process.env["UPSTOX_API_KEY"],
+      client_secret: process.env["UPSTOX_SECRET_KEY"],
       redirect_uri: "https://localhost:4200/redirect",
       grant_type: "authorization_code",
     };
+
+    console.log("body : ", body);
 
     let header: Object = {
       headers: {
@@ -26,11 +28,14 @@ export class upstoxService {
       }
     }
 
+
+
     let response: string = await axios.post(this.base_url + "/login/authorization/token", body, header);
 
     console.log("Response : ", response);
 
     return response;
+
   }
 
   async fetchStocksList() {
