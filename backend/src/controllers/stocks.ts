@@ -20,6 +20,8 @@ export const generateUpstoxAccessToken = async (req: Request, res: Response) => 
 
   let upstoxObj = new upstoxService();
   let generateAT = await upstoxObj.generateUpstoxAT(req.params.auth_code);
+
+  sendResponse(res, generateAT);
 }
 
 

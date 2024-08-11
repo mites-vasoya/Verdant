@@ -27,11 +27,14 @@ export class RedirectedComponent implements OnInit {
   }
 
   fetchData() {
-      console.log("this.auth_code : ", this.auth_code);
+    console.log("this.auth_code : ", this.auth_code);
     if (this.auth_code != "") {
       this.apiService.fetchAuthToken(this.auth_code)
         .subscribe(
-          response => this.data = response,
+          response => {
+            this.data = response;
+            console.log("Response : ", this.data);
+          },
           error => console.error('Error fetching data', error)
         );
     } else {
